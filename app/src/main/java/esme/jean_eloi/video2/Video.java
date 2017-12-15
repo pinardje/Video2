@@ -36,18 +36,6 @@ public class Video extends Bluetooth {
         finish();
 
     }
-
-   /* @Override
-    protected void onDestroy() {
-        if (vidView == null) {
-            super.onDestroy();
-
-        }
-        else {
-            vidView=null;
-            super.onDestroy();
-
-        }
-    }*/
+    
 
 }
