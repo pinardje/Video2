@@ -41,7 +41,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class Bluetooth extends AppCompatActivity {
-
     public static final UUID UUID_POTAR = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");//client configuration characteristique
 
     private BluetoothAdapter mBluetoothAdapter;
@@ -507,8 +506,12 @@ public class Bluetooth extends AppCompatActivity {
     //return 20;
     //}
 
+
+
     public void Go(View v) {
-        Intent intent=new Intent(this,Video.class);
+        //on creer une nouvelle intent on definit la class de depart ici this et la class d'arrivé ici SecondActivite
+        Intent intent = new Intent(this, Video.class);
+        //on lance l'intent, cela a pour effet de stoper l'activité courante et lancer une autre activite ici SecondActivite
         startActivity(intent);
 
 

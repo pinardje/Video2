@@ -36,6 +36,6 @@ public class Video extends Bluetooth {
         finish();
 
     }
-    
+
 
 }

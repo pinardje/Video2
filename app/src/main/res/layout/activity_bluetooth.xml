@@ -67,21 +67,14 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-        <TextView
-            android:id="@+id/value_potar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
     </LinearLayout>
 
     <View
         android:id="@+id/separator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/relative_layout_3"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/value_potar"
         android:background="@android:color/black" />
 
 
@@ -121,7 +114,13 @@
 
     </LinearLayout>
 
-
+    <TextView
+        android:id="@+id/value_potar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_layout_2"
+        android:layout_centerHorizontal="true"
+        android:text="" />
 
 
 </RelativeLayout>
