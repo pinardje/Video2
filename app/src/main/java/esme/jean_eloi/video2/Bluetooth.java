@@ -498,9 +498,9 @@ public class Bluetooth extends AppCompatActivity {
         }
     }*/
 
-   /* public static int getValuePotar() {
+    public static int getValuePotar() {
         return value_potar;
-    }*/
+    }
 
     // public static int ceudruc(){
     //return 20;

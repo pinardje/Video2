@@ -2,6 +2,8 @@ package esme.jean_eloi.video2;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -12,18 +14,40 @@ import android.widget.VideoView;
 
 public class Video extends Bluetooth {
 
+    VideoView vidView;
+
+    private Handler mHandlerVid = new Handler();
+
+
+    Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if(getValuePotar() == 1){
+                if(vidView.isPlaying())
+                    vidView.pause();
+                else
+                    vidView.start();
+            }
+            Log.e("Is playing ? ", String.valueOf(vidView.isPlaying()));
+
+            mHandlerVid.postDelayed(this, 1000);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-        VideoView vidView = (VideoView) findViewById(R.id.myVideo);
+        vidView = (VideoView) findViewById(R.id.myVideo);
         vidView.setVideoURI(vidUri);
         vidView.start();
 
         MediaController vidControl = new MediaController(this);
         vidControl.setAnchorView(vidView);
         vidView.setMediaController(vidControl);
+
+        mHandlerVid.post(mRunnable);
+
 
     }
 
@@ -38,4 +62,16 @@ public class Video extends Bluetooth {
     }
 
 
+    /*@Override
+    protected void onResume() {
+        super.onResume();
+        VideoView vidView = (VideoView) findViewById(R.id.myVideo);
+        if(getValuePotar() == 1){
+            if(vidView.isPlaying()){
+                vidView.pause();
+            }else{
+                vidView.resume();
+            }
+        }
+    }*/
 }
